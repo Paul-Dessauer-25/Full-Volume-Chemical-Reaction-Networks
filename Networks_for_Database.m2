@@ -1,3 +1,5 @@
+-- Below is the Macaulay 2 code for some chemical reaction networks from ODEbase. 
+
 needsPackage "ReactionNetworks";
 
 -- BIOMD0000000363
