@@ -273,7 +273,7 @@ csvFile = openOut csvPath;
 
 -- Write the headings immediately
 csvFile
-    << "ODEbase Name,Number of Species,Full Volume"
+    << "Network ID,Number of Species,Is Full Volume?"
     << endl
     << flush;
 
