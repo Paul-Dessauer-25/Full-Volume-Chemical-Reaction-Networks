@@ -1,9 +1,9 @@
-# Comparing-Upper-Bounds-on-the-Number-of-Steady-States-of-a-Chemical-Reaction-Network
-This GitHub repository contains the relevant supporting material for the paper "Comparing Upper Bounds on the Number of Steady States of a Chemical Reaction Network". 
+# Determining when the Newton--Okounkov Body Bounds of a Chemical Reaction Network are at least as good as the Mixed-Volume Bounds.
+This GitHub repository contains the relevant supporting material for the paper "Determining when the Newton--Okounkov Body Bounds of a Chemical Reaction Network are at least as good as the Mixed-Volume Bounds." 
 
 # All_Production_Closed_Sets.py
 
-All_Production_Closed_Sets.py contains code to generate all production-closed sets of a network. We use algorithm 2 from the appendix of the paper. There are two functions given. Then first function takes as an input: a set of species, the left-hand side matrix of the network, and the stoichiometric matrix of the network. It the applies the algorithm. The second function takes as an input: the left-hand side matrix of the network and the stoichiometric matrix of the network. It outputs all production_closed sets of the network.
+All_Production_Closed_Sets.py contains code to generate all production-closed sets of a network. We use algorithm 2 from the appendix of the paper. There are two functions given. The first function takes as an input: a set of species, the left-hand side matrix of the network, and the stoichiometric matrix of the network. It then applies the algorithm. The second function takes as an input: the left-hand side matrix of the network and the stoichiometric matrix of the network. It outputs all production_closed sets of the network.
 
 
 # Brute_Force_Full_Volume.m2
@@ -14,9 +14,9 @@ Brute_Force_Full_volume.m2 contains Macaulay2 code that checks if a network is f
 
 Computing_NO_Bodies.m2 contains the Macaulay 2 code for computing the Newton-Okounkov body bound of a chemical reaction network. This code was written by Nida Obatake and Elise Walker for the paper "Newton-Okounkov bodies of chemical reaction systems".
 
-# Database.csv
+# Data_Base.csv
 
-Database.csv contains a CSV file for whether certain networks are Full Volume. The networks can be seen in "Networks_for_database.m2". We use the Computing_NO_Bodies.m2 code to create this database.
+Database.csv contains a CSV file for whether certain networks are Full Volume. The networks can be seen in "Networks_for_database.m2". We use the Brute_Force_Full_Volume.m2 code to create this database.
 
 # Example_2.28.m2
 
@@ -26,6 +26,6 @@ Example_2.28.m2 contains Macaulay2 code supporting the claim made in our paper a
 
 Example_3.5.m2 contains Macaulay2 code that supports the claim made in our paper about the Newton-Okounkov body bound for the given network being equal to 4, for the given basis. 
 
-# Networks_for_database.m2
+# Networks_for_Database.m2
 
-Networks_for_database.m2 contains the Macaulay2 code for the networks used in Database.m2. These networks are from the ODEbase. We use 24 networks ranging from 3 to 8 species. We stop at only 24 networks since the ODEbase does not store the networks in a way that is easy to write in Macaulay2. Additionally, we stop at 8 species as the Computing_NO_Bodies.m2 code starts to take hours to verify a network being Full Volume. 
+Networks_for_database.m2 contains the Macaulay2 code for the networks used in Database.m2. These networks are from the ODEbase. We use 24 networks ranging from 2 to 8 species. We stop at only 24 networks since the ODEbase does not store the networks in a way that is easy to write in Macaulay2. Additionally, we stop at 8 species as the Brute_Force_Full_Volume.m2 code starts to take hours to verify a network is Full Volume. 
