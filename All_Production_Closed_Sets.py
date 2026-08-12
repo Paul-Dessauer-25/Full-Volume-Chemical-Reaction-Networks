@@ -27,24 +27,51 @@ def production_closed(S, L, N):
 
         T = new_T
 
-#Given the left-hand side matrix L and the stoichiometric matrix N, this will output all production-closed sets of the network
 def all_production_closed(L, N):
+    
     L = np.array(L)
     LHS = []
+    
     for i in range(len(L[0])):
-        LHS.append({j+1 for j in range(len(L[:, 0]))
-           if L[j, i]!= 0})
-    LHS = [set(x) for x in dict.fromkeys(frozenset(s) for s in LHS)]
+        
+        LHS.append(
+            {
+                j+1
+                for j in range(len(L[:, 0]))
+                   if L[j, i] != 0
+            }
+        )
+        
+    LHS = [
+        set(x) 
+        for x in dict.fromkeys(frozenset(s) 
+                               for s in LHS
+                              )
+    ]
+    
     
     T1 = LHS
+    
     while True:
+        
         T = [] 
+        
         for i in range(len(T1)):
-            T.append(trace_species(T1[i], L, N))
-        T1 = [set(x) for x in dict.fromkeys(frozenset(s) for s in T)]
+            T.append(production_closed(T1[i], L, N))
+            
+        T = [
+            set(x)
+            for x in dict.fromkeys(frozenset(s)
+                                   for s in T
+                                  )
+        ]
+        
         if T == T1:
             T1.remove(set(range(1, len(L)+1)))
             return(T1)
+            
+        T1 = T
+
 
 # Below are the stoichiometric matrix N and left-hand side matrix L for the network from example 4.23
 N = [
