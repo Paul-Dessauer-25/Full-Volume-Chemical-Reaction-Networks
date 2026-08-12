@@ -1,7 +1,12 @@
 # Comparing-Upper-Bounds-on-the-Number-of-Steady-States-of-a-Chemical-Reaction-Network
 This GitHub repository contains the relevant supporting material for the paper "Comparing Upper Bounds on the Number of Steady States of a Chemical Reaction Network". 
 
-# Brute_Force_Full_volume.m2
+# All_Production_Closed_Sets.py
+
+All_Production_Closed_Sets.py contains code to generate all production-closed sets of a network. We use algorithm 2 from the appendix of the paper. There are two functions given. Then first function takes as an input: a set of species, the left-hand side matrix of the network, and the stoichiometric matrix of the network. It the applies the algorithm. The second function takes as an input: the left-hand side matrix of the network and the stoichiometric matrix of the network. It outputs all production_closed sets of the network.
+
+
+# Brute_Force_Full_Volume.m2
 
 Brute_Force_Full_volume.m2 contains Macaulay2 code that checks if a network is full-volume the 'naive' way. The network must be encoded using the "ReactionNetworks" package. The program will first generate the augmented system of equations. Since full-volume may depend on our choice of conservation law matrix, we always choose the unique row-reduced echelon form of the conservation law matrix. Furthermore, since the support of any constant term is 0, we set the total-constant vector equal to the vector of only 1s. Once the augmented system of equations is created, the program will create the associated polytopes for the network. Finally, the program will check if every proper face of the reactant polytope has the sufficient number of associated polytopes touching it. If every proper face of the reactant polytope does have the sufficient number of associated polytopes touching it, then the program will return "True". Otherwise, the program will return "False" and will output the dimension of the problem face, the number of polytopes touching the problem face, the required number of polytopes touching the problem face, indices of the polytopes touching the problem face, and the vertices of the problem face.
 
