@@ -1,7 +1,7 @@
 import numpy as np
 
 # Given a set of species S\subset [n], the left-hand side matrix L, and the stoichiometric matrix N, this will run algorithm 2 
-ddef production_closed(S, L, N):
+def production_closed(S, L, N):
     
     n = len(L)
     r = len(L[0])
