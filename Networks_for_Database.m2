@@ -273,7 +273,7 @@ csvFile = openOut csvPath;
 
 -- Write the headings immediately
 csvFile
-    << "Network ID,Number of Species,Is Full Volume?"
+    << "Network ID,Dimension,Is Full Volume?"
     << endl
     << flush;
 
