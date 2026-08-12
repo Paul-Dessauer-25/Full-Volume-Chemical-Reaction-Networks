@@ -1,6 +1,7 @@
 -- Below is the Macaulay 2 code for some chemical reaction networks from ODEbase. 
 
 needsPackage "ReactionNetworks";
+needs "./Brute_Force_Full_Volume.m2"
 
 -- BIOMD0000000363
 N1 = reactionNetwork {
@@ -237,3 +238,67 @@ N23 = reactionNetwork ({
     "RelB_p52 --> 0",
     "RelB --> 0"
     }, NullSymbol => "0");
+
+-- The following code creates a CSV file that tells us if the above networks are full-volume. We can see this CSV file in Data_Base.csv
+
+networkData = {
+    {"BIOMD0000000363", N1},
+    {"BIOMD0000000413", N2},
+    {"BIOMD0000000040", N3},
+    {"BIOMD0000000629", N4},
+    {"BIOMD0000000609", N5},
+    {"BIOMD0000000233", N6},
+    {"BIOMD0000000267", N7},
+    {"BIOMD0000000486", N8},
+    {"BIOMD0000000283", N9},
+    {"BIOMD0000000854", N10},
+    {"BIOMD0000000916", N11},
+    {"BIOMD0000000060", N12},
+    {"BIOMD0000000092", N13},
+    {"BIOMD0000000057", N14},
+    {"BIOMD0000000271", N15},
+    {"BIOMD0000000272", N16},
+    {"BIOMD0000000282", N17},
+    {"BIOMD0000000405", N18},
+    {"BIOMD0000000487", N19},
+    {"BIOMD0000000870", N20},
+    {"BIOMD0000000361", N21},
+    {"BIOMD0000000692", N22},
+    {"BIOMD0000000871", N23}
+};
+
+csvPath = "Data_Base.csv";
+
+csvFile = openOut csvPath;
+
+-- Write the headings immediately
+csvFile
+    << "ODEbase Name,Number of Species,Full Volume"
+    << endl
+    << flush;
+
+scan(networkData, data -> (
+    modelName := data#0;
+    network := data#1;
+
+    print("Processing " | modelName | "...");
+
+    result := try FullVolume network
+              else "Dimension too small";
+
+    -- Write this network's result immediately
+    csvFile
+        << modelName << ","
+        << toString(#network.Species) << ","
+        << toString(result)
+        << endl
+        << flush;
+
+    print("Saved " | modelName);
+));
+
+csvFile << close;
+
+print("Finished. Results saved to " | csvPath);
+
+
