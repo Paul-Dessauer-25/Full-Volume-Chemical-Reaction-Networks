@@ -1,7 +1,7 @@
 import numpy as np
 
 # Given a set of species S\subset [n], the left-hand side matrix L, and the stoichiometric matrix N, this will run algorithm 2 
-def production_closed(S, L, N):
+ddef production_closed(S, L, N):
     
     n = len(L)
     r = len(L[0])
@@ -51,6 +51,7 @@ def all_production_closed(L, N):
     
     
     Tq = LHS
+    T1 = []
     
     while True:
         
@@ -66,11 +67,23 @@ def all_production_closed(L, N):
                                   )
         ]
         
-        if T == Tq:
-            Tq.remove(set(range(1, len(L)+1)))
-            return(Tq)
-            
-        Tq = T
+        if set(range(1, len(L)+1)) in T:
+                T.remove(set(range(1, len(L)+1)))
+        print(T)
+        if T == T1:
+            return(T)
+        
+        T1 = T
+        Tq = []
+        
+        for i in T:
+            for j in T:
+                Tq.append(i | j)
+                
+        Tq = [set(x) for x in dict.fromkeys(frozenset(s) for s in Tq)]
+        
+        if set(range(1, len(L)+1)) in Tq:
+                Tq.remove(set(range(1, len(L)+1)))
 
 
 # Below are the stoichiometric matrix N and left-hand side matrix L for the network from example 4.23
