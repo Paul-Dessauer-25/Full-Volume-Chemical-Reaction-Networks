@@ -94,23 +94,8 @@ N10 = reactionNetwork {
 };
 
 
--- Listed as BIOMD0000000609 in your file
-N11 = reactionNetwork ({
-    "Paracetamol_APAP --> NAPQI",
-    "NAPQI --> Paracetamol_APAP",
-    "Paracetamol_APAP --> 0",
-    "NAPQI --> Protein_adducts",
-    "GSH + NAPQI --> 0",
-    "GSH --> 0",
-    "0 --> GSH",
-    "Paracetamol_APAP + Sulphate__PAPS --> 0",
-    "Sulphate__PAPS --> 0",
-    "0 --> Sulphate__PAPS"
-    }, NullSymbol => "0");
-
-
 -- BIOMD0000000916
-N12 = reactionNetwork {
+N11 = reactionNetwork {
     "The_FOD_in_the_circulation__X1 --> The_FOD_in_the_metabolizing_tissues__X4",
     "The_FOD_in_the_metabolizing_tissues__X4 <--> The_FOD_in_the_gallbladder___intestinal_lumen__X5",
     "The_FOD_in_the_gallbladder___intestinal_lumen__X5 --> The_cumulative_FOD_excreted_in_the_non_urinary_pool__X3",
@@ -119,7 +104,7 @@ N12 = reactionNetwork {
 
 
 -- BIOMD0000000060
-N13 = reactionNetwork {
+N12 = reactionNetwork {
     "Po1 <--> Pc1",
     "Po1 <--> Po2",
     "Po1 <--> Pc2"
@@ -127,7 +112,7 @@ N13 = reactionNetwork {
 
 
 -- BIOMD0000000092
-N14 = reactionNetwork {
+N13 = reactionNetwork {
     "z <--> e + w",
     "e + z <--> ez",
     "ez <--> 2e + w"
@@ -135,7 +120,7 @@ N14 = reactionNetwork {
 
 
 -- BIOMD0000000057
-N15 = reactionNetwork {
+N14 = reactionNetwork {
     "R <--> O",
     "R <--> I1",
     "O <--> S",
@@ -145,7 +130,7 @@ N15 = reactionNetwork {
 
 
 -- BIOMD0000000271
-N16 = reactionNetwork ({
+N15 = reactionNetwork ({
     "0 --> EpoR",
     "EpoR --> 0",
     "Epo + EpoR --> Epo_EpoR",
@@ -158,7 +143,7 @@ N16 = reactionNetwork ({
 
 
 -- BIOMD0000000272
-N17 = reactionNetwork ({
+N16 = reactionNetwork ({
     "0 --> EpoR",
     "EpoR --> 0",
     "EpoR + SAv --> SAv_EpoR",
@@ -171,7 +156,7 @@ N17 = reactionNetwork ({
 
 
 -- BIOMD0000000282
-N18 = reactionNetwork {
+N17 = reactionNetwork {
     "e + x <--> p",
     "p + x --> e + p1",
     "a + p --> e + p2"
@@ -179,7 +164,7 @@ N18 = reactionNetwork {
 
 
 -- BIOMD0000000405
-N19 = reactionNetwork ({
+N18 = reactionNetwork ({
     "species_1 + species_5 --> species_3",
     "species_2 + species_5 --> species_4",
     "0 --> species_1",
@@ -192,7 +177,7 @@ N19 = reactionNetwork ({
 
 
 -- BIOMD0000000487
-N20 = reactionNetwork {
+N19 = reactionNetwork {
     "S1 + S2 --> S3",
     "S3 --> S1 + S2",
     "S3 --> S1 + S5",
@@ -203,7 +188,7 @@ N20 = reactionNetwork {
 
 
 -- BIOMD0000000870
-N21 = reactionNetwork ({
+N20 = reactionNetwork ({
     "p100t --> p100",
     "p100_NIK --> NIK + p52",
     "p52 --> 0",
@@ -217,7 +202,7 @@ N21 = reactionNetwork ({
 
 
 -- BIOMD0000000361
-N22 = reactionNetwork {
+N21 = reactionNetwork {
     "VIIa_TF + X <--> VIIa_TF_X",
     "VIIa_TF_X --> VIIa_TF_Xa",
     "VIIa_TF_Xa <--> VIIa_TF + Xa",
@@ -227,7 +212,7 @@ N22 = reactionNetwork {
 
 
 -- BIOMD0000000692
-N23 = reactionNetwork {
+N22 = reactionNetwork {
     "RasGTP_minus_NF1_star_ <--> RasGDP_minus_NF1_Pi",
     "RasGDP_minus_NF1_Pi <--> Pi + RasGDP_NF1",
     "RasGTP_minus_NF1 <--> RasGTP_minus_NF1_star_",
@@ -237,7 +222,7 @@ N23 = reactionNetwork {
 
 
 -- BIOMD0000000871
-N24 = reactionNetwork ({
+N23 = reactionNetwork ({
     "0 --> p100",
     "p100_NIK --> NIK + p52",
     "p52 --> 0",
