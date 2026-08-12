@@ -1,4 +1,4 @@
-Network ID,Dimension,Is full-volume?
+Network ID,Number of Species,Is full-volume?
 BIOMD0000000363,4,false
 BIOMD0000000413,5,true
 BIOMD0000000040,5,false
@@ -9,7 +9,6 @@ BIOMD0000000267,4,false
 BIOMD0000000486,2,true
 BIOMD0000000283,4,false
 BIOMD0000000854,4,true
-BIOMD0000000609,5, Dimension too small
 BIOMD0000000916,5,false
 BIOMD0000000060,4,true
 BIOMD0000000092,4,true
