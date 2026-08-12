@@ -50,14 +50,14 @@ def all_production_closed(L, N):
     ]
     
     
-    T1 = LHS
+    Tq = LHS
     
     while True:
         
         T = [] 
         
-        for i in range(len(T1)):
-            T.append(production_closed(T1[i], L, N))
+        for i in range(len(Tq)):
+            T.append(production_closed(Tq[i], L, N))
             
         T = [
             set(x)
@@ -66,11 +66,11 @@ def all_production_closed(L, N):
                                   )
         ]
         
-        if T == T1:
-            T1.remove(set(range(1, len(L)+1)))
-            return(T1)
+        if T == Tq:
+            Tq.remove(set(range(1, len(L)+1)))
+            return(Tq)
             
-        T1 = T
+        Tq = T
 
 
 # Below are the stoichiometric matrix N and left-hand side matrix L for the network from example 4.23
