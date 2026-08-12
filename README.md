@@ -8,7 +8,7 @@ All_Production_Closed_Sets.py contains code to generate all production-closed se
 
 # Brute_Force_Full_Volume.m2
 
-Brute_Force_Full_volume.m2 contains Macaulay2 code that checks if a network is full-volume the 'naive' way. The network must be encoded using the "ReactionNetworks" package. The program will first generate the augmented system of equations. Since full-volume may depend on our choice of conservation law matrix, we always choose the unique row-reduced echelon form of the conservation law matrix. Furthermore, since the support of any constant term is 0, we set the total-constant vector equal to the vector of only 1s. Once the augmented system of equations is created, the program will create the associated polytopes for the network. Finally, the program will check if every proper face of the reactant polytope has the sufficient number of associated polytopes touching it. If every proper face of the reactant polytope does have the sufficient number of associated polytopes touching it, then the program will return "True". Otherwise, the program will return "False" and will output the dimension of the problem face, the number of polytopes touching the problem face, the required number of polytopes touching the problem face, indices of the polytopes touching the problem face, and the vertices of the problem face.
+Brute_Force_Full_Volume.m2 contains Macaulay2 code that checks if a network is full-volume the 'naive' way. The network must be encoded using the "ReactionNetworks" package. The program will first generate the augmented system of equations. Since full-volume may depend on our choice of conservation law matrix, we always choose the unique row-reduced echelon form of the conservation law matrix. Furthermore, since the support of any constant term is 0, we set the total-constant vector equal to the vector of only 1s. Once the augmented system of equations is created, the program will create the associated polytopes for the network. Finally, the program will check if every proper face of the reactant polytope has the sufficient number of associated polytopes touching it. If every proper face of the reactant polytope does have the sufficient number of associated polytopes touching it, then the program will return "True". Otherwise, the program will return "False" and will output the dimension of the problem face, the number of polytopes touching the problem face, the required number of polytopes touching the problem face, indices of the polytopes touching the problem face, and the vertices of the problem face.
 
 # Computing_NO_Bodies.m2
 
@@ -16,7 +16,7 @@ Computing_NO_Bodies.m2 contains the Macaulay 2 code for computing the Newton-Oko
 
 # Data_Base.csv
 
-Database.csv contains a CSV file for whether certain networks are Full Volume. The networks can be seen in "Networks_for_database.m2". We use the Brute_Force_Full_Volume.m2 code to create this database.
+Data_Base.csv contains a CSV file for whether certain networks are Full Volume. The networks can be seen in "Networks_for_database.m2". We use the Brute_Force_Full_Volume.m2 code to create this database.
 
 # Example_2.28.m2
 
@@ -28,4 +28,4 @@ Example_3.5.m2 contains Macaulay2 code that supports the claim made in our paper
 
 # Networks_for_Database.m2
 
-Networks_for_database.m2 contains the Macaulay2 code for the networks used in Database.m2. These networks are from the ODEbase. We use 24 networks ranging from 2 to 8 species. We stop at only 24 networks since the ODEbase does not store the networks in a way that is easy to write in Macaulay2. Additionally, we stop at 8 species as the Brute_Force_Full_Volume.m2 code starts to take hours to verify a network is Full Volume. 
+Networks_for_Database.m2 contains the Macaulay2 code for the networks used in Data_Base.m2. These networks are from the ODEbase. We use 23 networks ranging from 2 to 8 species. We stop at only 23 networks since the ODEbase does not store the networks in a way that is easy to write in Macaulay2. Additionally, we stop at 8 species as the Brute_Force_Full_Volume.m2 code starts to take hours to verify a network is Full Volume. 
