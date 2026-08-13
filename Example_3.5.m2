@@ -1,4 +1,4 @@
--- The following is the comutation supporting the claim made in example 3.5.
+-- The following is the computation supporting the claim made in example 3.5.
 -- Using the methods and code from the "Newton-Okounkov bodies of chemical reaction systems" paper we show that with the chosen basis, the chemical reaction network
 -- from example 2.3 is equal to 4.
 
