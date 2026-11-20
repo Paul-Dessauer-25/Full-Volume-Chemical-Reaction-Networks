@@ -3,7 +3,7 @@ This GitHub repository contains the relevant supporting material for the paper "
 
 # All_Production_Closed_Sets.py
 
-All_Production_Closed_Sets.py contains code to generate all production-closed sets of a network. We use algorithm 2 from the appendix of the paper. There are two functions given. The first function takes as an input: a set of species, the left-hand side matrix of the network, and the stoichiometric matrix of the network. It then applies the algorithm. The second function takes as an input: the left-hand side matrix of the network and the stoichiometric matrix of the network. It outputs all production_closed sets of the network.
+All_Production_Closed_Sets.py contains code to generate all production-closed sets of a network. We use the algorithm given in the paper. There are two functions given. The first function takes as an input: a set of species, the left-hand side matrix of the network, and the stoichiometric matrix of the network. It then applies the algorithm. The second function takes as an input: the left-hand side matrix of the network and the stoichiometric matrix of the network. It outputs all production_closed sets of the network.
 
 
 # Brute_Force_Full_Volume.m2
