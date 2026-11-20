@@ -86,7 +86,7 @@ def all_production_closed(L, N):
                 Tq.remove(set(range(1, len(L)+1)))
 
 
-# Below are the stoichiometric matrix N and left-hand side matrix L for the network from example 4.23
+# Below are the stoichiometric matrix N and left-hand side matrix L for the network from example 4.36
 N = [
     [-1,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],  
     [-1,  1,  0,  0,  1, -1, -1,  0,  0,  0,  0,  1, -1,  0,  0,  0,  1, -1,  0],  
