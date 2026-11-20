@@ -1,4 +1,4 @@
--- In Example 2.28, we claim that the mixed volume and volume of the chemical reaction network given in Example 2.3 are equal to 5.
+-- In Example 2.45, we claim that the mixed volume and volume of the chemical reaction network given in Example 2.3 are equal to 5.
 -- Below is Macaulay 2 code verifying this claim.
 
 needsPackage "Polyhedra";
