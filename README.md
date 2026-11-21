@@ -6,9 +6,16 @@ This GitHub repository contains the relevant supporting material for the paper "
 All_Production_Closed_Sets.py contains code to generate all production-closed sets of a network. We use the algorithm given in the paper. There are two functions given. The first function takes as an input: a set of species, the left-hand side matrix of the network, and the stoichiometric matrix of the network. It then applies the algorithm. The second function takes as an input: the left-hand side matrix of the network and the stoichiometric matrix of the network. It outputs all production_closed sets of the network.
 
 
+
+
 # Brute_Force_Full_Volume.m2
 
-Brute_Force_Full_Volume.m2 contains Macaulay2 code that checks if a network is full-volume the 'naive' way. The network must be encoded using the "ReactionNetworks" package. The program will first generate the augmented system of equations. Since full-volume may depend on our choice of conservation law matrix, we always choose the unique row-reduced echelon form of the conservation law matrix. Furthermore, since the support of any constant term is 0, we set the total-constant vector equal to the vector of only 1s. Once the augmented system of equations is created, the program will create the associated polytopes for the network. Finally, the program will check if every proper face of the reactant polytope has the sufficient number of associated polytopes touching it. If every proper face of the reactant polytope does have the sufficient number of associated polytopes touching it, then the program will return "True". Otherwise, the program will return "False" and will output the dimension of the problem face, the number of polytopes touching the problem face, the required number of polytopes touching the problem face, indices of the polytopes touching the problem face, and the vertices of the problem face.
+Given a network `N` defined with the Macaulay2 package `ReactionNetworks`, `FullVolume N` constructs its augmented steady-state system. It uses the row-reduced echelon conservation-law matrix for the species order in `N.Species`, sets each total constant to 1, and assigns a random nonzero rational value to each rate constant.
+
+The test requires the total polytope to have dimension equal to the number of species. It returns `true` if every nonempty proper face $F$ meets at least $\dim(F)+1$ of the Newton polytopes. If a face fails this criterion, the function returns `false` and prints the face's dimension and vertices, along with the indices of the Newton polytopes that meet it. The printed index `0` corresponds to $\Delta_1$ in the paper.
+
+See [Example 6.4](./Example_6.4.m2) for a full-volume system and a system
+with a face that fails the criterion.
 
 # Computing_NO_Bodies.m2
 
