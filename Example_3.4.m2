@@ -12,7 +12,6 @@ needs "./Computing_NO_Bodies.m2"
 
 
 -- Step 0: Choose monomial term order. We use the default of grvlex
--- WNT pathway model with random rational coefficients and conservation laws
 for i in 1..10 do k_i = random(QQ, Height => 1000); 
 R = QQ[x_1, x_2, x_3]; -- default term order of grvlex
 
