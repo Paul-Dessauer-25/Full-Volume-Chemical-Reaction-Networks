@@ -12,7 +12,6 @@ hybrid = reactionNetwork {
     "HKpp + Hpt --> HKp0 + Hptp",
     "Hptp --> Hpt"
 };
-FullVolume hybrid      -- returns: true
 
 -- Figure 9(c). Allosteric reciprocal enzyme regulation
 allosteric = reactionNetwork {
@@ -23,8 +22,6 @@ allosteric = reactionNetwork {
     "K + L <--> KL",
     "P + L <--> PL"
 };
-FullVolume allosteric  -- returns: false
-
 
 print FullVolume hybrid      -- returns: true
 print FullVolume allosteric  -- returns: false
