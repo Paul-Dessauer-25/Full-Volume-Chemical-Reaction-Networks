@@ -1,5 +1,17 @@
-# Determining when the Newton--Okounkov Body Bounds of a Chemical Reaction Network are at least as good as the Mixed-Volume Bounds.
-This GitHub repository contains the relevant supporting material for the paper "Determining when the Newton--Okounkov Body Bounds of a Chemical Reaction Network are at least as good as the Mixed-Volume Bounds." 
+# When are Newton–Okounkov body bounds of a chemical reaction network at least as good as mixed-volume bounds?
+
+This repository contains the Macaulay2 and Python code accompanying the paper by Paul R. Dessauer Jr.
+
+## Computations from the paper
+
+| Example | Result in the paper | File |
+|---|---|---|
+| 2.45 | The mixed volume and the normalized volume of the total polytope of the Generic Recurring Network both equal 5. | [Example_2.45.m2](./Example_2.45.m2) |
+| 3.4 | For the same network, the Newton–Okounkov body bound equals 4 for the admissible space spanned by 1 and the three steady-state polynomials. | [Example_3.4.m2](./Example_3.4.m2) |
+| 4.39 | The 11-species network BIOMD0000000257, introduced in Example 4.36, has six production-closed sets. | [All_Production_Closed_Sets.py](./All_Production_Closed_Sets.py) |
+| 6.4 | The hybrid histidine kinase system in Figure 9(b) is full-volume. The allosteric reciprocal enzyme regulation system in Figure 9(c) fails the full-volume face criterion. | [Example_6.4.m2](./Example_6.4.m2) |
+
+The mixed volume of 5 in Example 2.45 corrects the value of 6 reported by Obatake, Shiu, and Sofia in Example 3.15 of [*Mixed volume of small reaction networks*](https://doi.org/10.2140/involve.2020.13.845).
 
 # All_Production_Closed_Sets.py
 
@@ -21,14 +33,6 @@ Computing_NO_Bodies.m2 contains the Macaulay 2 code for computing the Newton-Oko
 # Data_Base.csv
 
 Data_Base.csv contains a CSV file for whether certain networks are Full Volume. The networks can be seen in "Networks_for_database.m2". We use the Brute_Force_Full_Volume.m2 code to create this database.
-
-# Example_2.45.m2
-
-Example_2.45.m2 contains Macaulay2 code supporting the claim made in our paper about correcting an error from the paper "Mixed volume of small reaction networks" by Nida Obatake, Anne Shiu, and Dilruba Sofia. We show that the mixed volume and volume of the relevant network are equal to 5, not the claimed 6.
-
-# Example_3.4.m2
-
-Example_3.4.m2 contains Macaulay2 code that supports the claim made in our paper about the Newton-Okounkov body bound for the given network being equal to 4, for the given basis. 
 
 # Networks_for_Database.m2
 
